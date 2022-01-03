@@ -10,9 +10,7 @@ public class PlayerMoveInput : MonoBehaviour
 
     private InputAction _moveAction = null;
     private InputAction _JumpAcion = null;
-
     private CharacterController _characterController = null;
-
     public float _gravityFactorJumpUp = 1;
 
     private PlayerInput _PlayerInput = null;
@@ -22,11 +20,8 @@ public class PlayerMoveInput : MonoBehaviour
 
     private void Start()
     {
-
         _PlayerInput = GetComponent<PlayerInput>();
         _characterController = GetComponent<CharacterController>();
-
-
         _moveAction = _PlayerInput.actions.FindAction("Move", true);
         _JumpAcion = _PlayerInput.actions.FindAction("Jump", true);
     }

@@ -7,7 +7,7 @@ public class LookAround : MonoBehaviour
     public float _duration = 2f;
     public float _angle = 90f;
     private CharacterController _characterController;
-    private float _currentAngle = 0.5f; // in deg
+    private float _currentAngle = 0.0f; // in deg
     private int _direction = 1;
     private float _currentTime;
 

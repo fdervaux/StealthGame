@@ -19,15 +19,9 @@ public class CharacterController : MonoBehaviour
     public float _gravityFactorCancelJump = 1.6f;
     private bool _isGrounded = false;
 
-
-    private Vector3 _groundVelocity = Vector3.zero;
-
     public float _groundCheckDistance = 0.4f;
 
     public float _groundCheckOffset = 1.0f;
-
-    private MoveToTarget _moveToTarget = null;
-    private MovePlatform _movePlatform = null;
 
     private Rigidbody _rigidBody;
 
@@ -70,7 +64,7 @@ public class CharacterController : MonoBehaviour
         //add jump force to the player velocity
         if (_isGrounded)
         {
-            _velocity += _jumpForce * Vector3.up + _groundVelocity;
+            _velocity += _jumpForce * Vector3.up;
             _startJump = true;
         }
     }
@@ -84,10 +78,6 @@ public class CharacterController : MonoBehaviour
     {
         Vector3 groundCorrection = Vector3.zero;
         _isGrounded = false;
-        _groundVelocity = Vector3.zero;
-        _moveToTarget = null;
-        _movePlatform = null;
-
 
         if (!_startJump && _velocity.y < EPSILON)
         {
