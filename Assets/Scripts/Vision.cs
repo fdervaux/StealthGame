@@ -19,7 +19,6 @@ public class Vision : MonoBehaviour
 
     public void setColor(Color color)
     {
-        Debug.Log("test");
         _meshRenderer.material.SetColor("_BaseColor", color);
     }
 
